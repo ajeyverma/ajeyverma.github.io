@@ -1,154 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@Aarush Chaidhary</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aspiring developer passionate about IoT, AI, and Robotics. Skilled in Arduino, ESP32, and embedded systems, building innovative projects and exploring open-source technologies.">
+  <title>Aarush Verma | Developer Portfolio</title>
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f4f4f9; color: #333; line-height: 1.6; }
 
-        header {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://upload.wikimedia.org/wikipedia/commons/5/59/Mysore_Palace_Morning.jpg');
-            height: 60vh;
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding-top: 20vh;
-        }
+    /* Navbar */
+    nav { display: flex; justify-content: center; padding: 1rem; background-color: #1e1e2f; }
+    nav a { color: #fff; margin: 0 1rem; text-decoration: none; font-weight: bold; }
+    nav a:hover { color: #00bcd4; }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    /* Hero Section */
+    header { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; background: linear-gradient(to right, #1e1e2f, #2e2e4f); color: #fff; }
+    header h1 { font-size: 3rem; margin-bottom: 1rem; }
+    header p { font-size: 1.3rem; margin-bottom: 2rem; max-width: 700px; }
 
-        nav {
-            background: #333;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-        }
+    .btn { padding: 0.8rem 1.5rem; background-color: #00bcd4; color: #fff; border: none; border-radius: 25px; cursor: pointer; font-weight: bold; transition: 0.3s; text-decoration: none; }
+    .btn:hover { background-color: #0097a7; }
 
-        nav ul {
-            list-style: none;
-            text-align: center;
-        }
+    /* Sections */
+    section { padding: 5rem 2rem; max-width: 1000px; margin: auto; }
+    section h2 { text-align: center; margin-bottom: 2rem; font-size: 2.5rem; color: #1e1e2f; }
 
-        nav ul li {
-            display: inline;
-            margin: 0 20px;
-        }
+    /* About */
+    #about p { max-width: 800px; margin: auto; font-size: 1.2rem; }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
+    /* Skills */
+    #skills { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    .skill { background-color: #00bcd4; color: #fff; padding: 0.7rem 1.2rem; border-radius: 20px; font-weight: bold; }
 
-        .blog-section {
-            margin: 40px 0;
-        }
+    /* Projects */
+    #projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .project { background-color: #fff; padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .project h3 { margin-bottom: 0.5rem; color: #1e1e2f; }
+    .project p { margin-bottom: 1rem; color: #555; }
+    .project a { text-decoration: none; color: #00bcd4; font-weight: bold; }
+    .project a:hover { color: #0097a7; }
 
-        .blog-post {
-            background: #f5f5f5;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    /* Contact */
+    #contact { text-align: center; }
+    #contact a { display: inline-block; margin: 0.5rem; color: #1e1e2f; text-decoration: none; font-weight: bold; transition: 0.3s; }
+    #contact a:hover { color: #00bcd4; }
 
-        .author-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+    /* Footer */
+    footer { text-align: center; padding: 2rem; background-color: #1e1e2f; color: #fff; }
 
-        .author-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-
-        img.blog-img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-    </style>
+    /* Responsive */
+    @media (max-width: 768px) { header h1 { font-size: 2.2rem; } header p { font-size: 1rem; } }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Aarush Chaudhary</h1>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="/CmdXManage">CmdXManage</a></li>
-            <li><a href="#places">Places</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <!-- Navbar -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <div class="container">
-        <section id="about" class="blog-section">
-            <div class="author-info">
-                <div>
-                    <h2>About Me</h2>
-                    <p>Hi! I'm Pawan Yadav, a travel enthusiast sharing my experiences exploring the beautiful city of Mysore.</p>
-                </div>
-            </div>
-        </section>
+  <!-- Hero Section -->
+  <header>
+    <h1>Aarush Verma</h1>
+    <p>Aspiring Developer | IoT & Robotics Enthusiast | AI Explorer | Skilled in Arduino, ESP32 & Embedded Systems</p>
+    <a href="#projects" class="btn">View Projects</a>
+  </header>
 
-        <section id="places" class="blog-section">
-            <div class="blog-post">
-                <h2>Mysore Palace</h2>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Mysore_Palace_during_Blue_Hour.jpg" alt="Mysore Palace" class="blog-img">
-                <p>The magnificent Mysore Palace is one of India's most famous tourist attractions. The palace's architecture is a blend of Hindu, Muslim, Rajput, and Gothic styles.</p>
-            </div>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m an aspiring software and hardware developer based in Lucknow, Uttar Pradesh. I enjoy building projects that connect the physical world with software — especially IoT systems, automation tools, AI, and robotics. I’m passionate about learning new technologies and contributing to open-source projects.
+    </p>
+  </section>
 
-            <div class="blog-post">
-                <h2>Chamundi Hills</h2>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Chamundi_Hills_Mysore.jpg/1280px-Chamundi_Hills_Mysore.jpg" alt="Chamundi Hills" class="blog-img">
-                <p>Located at a height of 1065 meters, Chamundi Hills is a popular religious and tourist destination offering panoramic views of Mysore city.</p>
-            </div>
-        </section>
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill">Arduino</div>
+    <div class="skill">ESP32</div>
+    <div class="skill">Raspberry Pi</div>
+    <div class="skill">Embedded Systems</div>
+    <div class="skill">IoT</div>
+    <div class="skill">AI</div>
+    <div class="skill">Robotics</div>
+    <div class="skill">Python</div>
+    <div class="skill">C++</div>
+    <div class="skill">Web Development</div>
+    <div class="skill">Open-Source</div>
+  </section>
 
-        <section id="experience" class="blog-section">
-            <div class="blog-post">
-                <h2>My Mysore Experience</h2>
-                <p>Visiting Mysore was a magical experience. The city's rich cultural heritage, delicious food, and friendly people made my trip unforgettable. The famous Mysore Dosa and local sweets are must-tries for any visitor.</p>
-            </div>
-        </section>
-
-        <section id="contact" class="blog-section">
-            <div class="blog-post">
-                <h2>Contact Me</h2>
-                <p>Email: pawan.yadav@example.com</p>
-                <p>Follow me on social media for more travel updates!</p>
-            </div>
-        </section>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>SmartController</h3>
+      <p>An IoT project built with Arduino and MIT App Inventor to control LEDs, fans, and alarms via sensors and Bluetooth.</p>
+      <a href="https://github.com/ajeyverma/SmartController" target="_blank">View Repo</a>
     </div>
+    <div class="project">
+      <h3>CmdXManage</h3>
+      <p>A cross-platform command alias manager for Windows, Linux/macOS, and Termux to simplify command-line workflows.</p>
+      <a href="https://github.com/ajeyverma/CmdXManage" target="_blank">View Repo</a>
+    </div>
+    <div class="project">
+      <h3>Personal Website</h3>
+      <p>My GitHub Pages portfolio website showcasing my projects and skills.</p>
+      <a href="https://ajeyverma.github.io/" target="_blank">Visit Website</a>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2023 Mysore Travel Blog by Pawan Yadav. All rights reserved.</p>
-    </footer>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <a href="https://linkedin.com/in/ajeyverma" target="_blank">LinkedIn</a>
+    <a href="https://instagram.com/ajayverma097" target="_blank">Instagram</a>
+    <a href="https://facebook.com/ajayverma097" target="_blank">Facebook</a>
+    <p>Pronouns: He / Him</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    ⚡ Fun Fact: I never test my projects step by step—I prefer checking at the end because I’m confident my work is always right.
+  </footer>
+
 </body>
-</html></div>
-
+</html>
