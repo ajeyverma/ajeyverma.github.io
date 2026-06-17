@@ -47,15 +47,44 @@ body::before {
   z-index: 1;
 }
 
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.72);
+  border-bottom: 1px solid rgba(16, 32, 51, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+nav a {
+  color: var(--text);
+  padding: 0.65rem 0.95rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  transform: translateY(-1px);
+}
+
 .hero {
   position: relative;
-  min-height: 78vh;
+  min-height: 92vh;
   display: grid;
-  align-content: center;
-  justify-items: center;
-  gap: 1.25rem;
+  place-items: center;
+  gap: 1.5rem;
   text-align: center;
-  padding: 4.5rem 1.5rem 3rem;
+  padding: 6rem 1.5rem 4rem;
   color: #fff;
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.18), transparent 40%),
@@ -91,7 +120,7 @@ body::before {
   position: relative;
   z-index: 1;
   margin: 0;
-  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  font-size: clamp(3rem, 7vw, 5.5rem);
   line-height: 0.95;
   letter-spacing: -0.05em;
 }
@@ -103,6 +132,42 @@ body::before {
   max-width: 760px;
   color: rgba(255, 255, 255, 0.88);
   font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.hero-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.btn {
+  padding: 0.9rem 1.4rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn.primary {
+  background: #fff;
+  color: var(--accent-strong);
+  box-shadow: 0 18px 40px rgba(8, 51, 68, 0.25);
+}
+
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 .hero-stats {
@@ -161,11 +226,26 @@ body::before {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 1.5rem 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.content-section {
+  padding: 5rem 0 0;
+}
+
+.content-section h2 {
+  text-align: center;
+  margin: 0 0 0.8rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--text);
 }
 
 .section-intro {
   max-width: 760px;
-  margin: 0 auto 1.75rem;
+  margin: 0 auto 2rem;
   text-align: center;
   color: var(--muted);
   font-size: 1.05rem;
@@ -173,14 +253,14 @@ body::before {
 
 .achievement-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.25rem;
 }
 
 .achievement {
   display: grid;
   gap: 1rem;
-  padding: 1.35rem;
+  padding: 1.5rem;
   background: var(--surface-strong);
   border: 1px solid var(--border);
   border-radius: 24px;
@@ -191,6 +271,11 @@ body::before {
 .achievement:hover {
   transform: translateY(-4px);
   box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+}
+
+.achievement-top {
+  display: grid;
+  gap: 0.45rem;
 }
 
 .achievement-label {
@@ -206,11 +291,11 @@ body::before {
   text-transform: uppercase;
 }
 
-.achievement h2 {
+.achievement h3 {
   margin: 0;
   color: var(--text);
-  font-size: 1.2rem;
-  line-height: 1.25;
+  font-size: 1.35rem;
+  line-height: 1.15;
 }
 
 .achievement p {
@@ -251,13 +336,17 @@ body::before {
 footer {
   text-align: center;
   margin-top: 2.5rem;
-  padding-top: 1rem;
+  padding: 2rem 0 0;
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 0.95rem;
 }
 
 @media (max-width: 820px) {
+  nav {
+    justify-content: flex-start;
+  }
+
   .hero-stats {
     grid-template-columns: 1fr;
   }
@@ -268,7 +357,12 @@ footer {
   }
 
   .hero {
-    padding-top: 5.5rem;
+    min-height: auto;
+    padding: 5.5rem 1.25rem 3rem;
+  }
+
+  .content-section {
+    padding-top: 4rem;
   }
 }
 
@@ -277,8 +371,15 @@ footer {
     padding: 0 1rem 3rem;
   }
 
+  .hero-actions {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
   .hero {
-    min-height: auto;
     padding: 5rem 1rem 2.5rem;
   }
 
